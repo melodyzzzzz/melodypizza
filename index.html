@@ -6,7 +6,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
-                <script async defer
+<script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGGvtowsI7pB9ymYHTwYLq8sBrXAZKpPI">
 </script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="w3css.css" type="text/css" />
 <link href="css/styles.css" rel="stylesheet" type="text/css" />
 </head>
-<body style = "zoom:125%">
+<body>
 <div id="container" style="padding-top: 0px;">
   <div id="incontainer">
     <div id="header" style="height: 200px;">
@@ -32,13 +32,13 @@
 
         </div>
 
-        <div id="map" style="margin-top:5px;position: relative;overflow: hidden;height: 120px;width: 200px;">
+        <div id="map" style="margin-top:5px;height: 120px;width: 200px; z-index:99999">
 
                 <script>
                     var map;
                     function initialize() {  
                         var mapOptions = {
-                            zoom: 14,    
+                            zoom: 10,    
                             center: new google.maps.LatLng(48.444682, -123.378918)
                         };  
                         map = new google.maps.Map(document.getElementById('map'), mapOptions);
