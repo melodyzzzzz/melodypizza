@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Melody - Pizza</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+                <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGGvtowsI7pB9ymYHTwYLq8sBrXAZKpPI">
+</script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<script src="function.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="w3css.css" type="text/css" />
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body style = "zoom:125%">
+<div id="container" style="padding-top: 0px;">
+  <div id="incontainer">
+    <div id="header" style="height: 200px;">
+      <ul class="menu">
+        <li><a href="#">Order</a></li>
+      </ul>
+      <img src="images/logo.jpg" width="269" height="80" alt="" id="logo" /> </div>
+    <div id="content">
+      <div id="leftPan" style="margin-top: 0px;">
+        <div id="welcome">
+          <p class="headline" style="margin-bottom: 2px;">Please enter toppings delimited by comma </p>
+          <textarea class = "w3-large" rows="6" cols="20" id = "topping"></textarea>
+<button style="margin-left: 40px;margin-top: 5px;" data-toggle="modal" data-target="#prepareorder" onclick="showinfo()" class="w3-red w3-center btn btn-success">Prepare Order</button> 
+
+        </div>
+
+        <div id="map" style="margin-top:5px;position: relative;overflow: hidden;height: 120px;width: 200px;">
+
+                <script>
+                    var map;
+                    function initialize() {  
+                        var mapOptions = {
+                            zoom: 14,    
+                            center: new google.maps.LatLng(48.444682, -123.378918)
+                        };  
+                        map = new google.maps.Map(document.getElementById('map'), mapOptions);
+                        var marker = new google.maps.Marker({
+                            position: map.getCenter(),
+                            map: map,    
+                            title: 'Click to zoom'
+                        });
+                    }
+                    google.maps.event.addDomListener(window, 'load', initialize);
+                </script>
+            </div>
+
+      </div>
+      <div id="rightPan">
+        <div id="special">
+          <div class="w3-row">
+            <div class="w3-third w3-container">
+            <img style="height:66px; width:66px" src="images/Pepperoni.jpg">
+            <p>Pepperoni: 5$</p>
+            </div>
+            <div class="w3-third w3-container">
+            <img style = "height:66px; width:66px" src="images/mushroom.jpg" />
+            <p>Mushroom: 5$</p>
+            </div>
+            <div class="w3-third w3-container">
+            <img style = "height:66px; width:66px" src="images/greenpepper.png" />
+            <p>Pepper: 3$</p>
+            </div>
+            <div class="w3-third w3-container">
+            <img style = "height:66px; width:66px" src="images/chicken.jpg" />
+            <p>Chicken: 5$</p>
+            </div>
+            <div class="w3-third w3-container">
+            <img style = "height:66px; width:66px" src="images/bacon.jpg" />
+            <p>Bacon: 3$</p>
+            </div>
+            <div class="w3-third w3-container">
+            <img style = "height:66px; width:66px" src="images/pineapple.jpg" />
+            <p>Pineapple: 2$</p>
+            </div>
+            <div class="w3-third w3-container">
+            <img style = "height:66px; width:66px" src="images/chess.png" />
+            <p>Chess: 4$</p>
+            </div>
+            <div class="w3-third w3-container">
+            <img style = "height:66px; width:66px" src="images/beef.jpg" />
+            <p>Beef: 5$</p>
+            </div>
+            <div class="w3-third w3-container">
+            <img style = "height:66px; width:66px" src="images/Olive.png" />
+            <p>Olive: 3$</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clear" id="end"></div>
+    </div>
+  </div>
+</div>
+
+  <div id="prepareorder" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Your order information</h4>
+        </div>
+        <div class="modal-body">
+		  <p class = "w3-text-red w3-large" id = "orderinfo"></p>
+	  
+        </div>
+        <div class="modal-footer">
+          <button data-toggle="modal" data-target="#thank" data-dismiss="modal" data-target="#thank" class="btn btn-danger">Place Order</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="thank" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content w3-red">
+        <div class="modal-header w3-red">
+        </div>
+        <div class="modal-body w3-red">
+          <p class = "w3-large">Thanks!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</html>
